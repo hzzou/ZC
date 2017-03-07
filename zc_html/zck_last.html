@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>中仓网</title>
+	<link rel="stylesheet" href="css/dh.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="css/index.css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/zoompic.css" type="text/css">
+    
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type=text/javascript src="js/jquery.jqzoom.js"></script>
+	<script type=text/javascript src="js/jquery.livequery.js"></script>
+    <script type=text/javascript>
+$(function(){
+    
+    /* 鼠标移动小图，小图对应大图显示在大图上，并替换放大镜中的图*/
+    $("#specList ul li img").livequery("mouseover",function(){ 
+        var imgSrc = $(this).attr("src");
+        var i = imgSrc.lastIndexOf(".");
+        var unit = imgSrc.substring(i);
+        imgSrc = imgSrc.substring(0,i);
+        var imgSrc_small = $(this).attr("src_D");
+        var imgSrc_big = $(this).attr("src_H");
+        $("#bigImg").attr({"src": imgSrc_small ,"jqimg": imgSrc_big });
+        $(this).css({"border":"2px solid #3399cc","padding":"1px"});
+    });
+    
+    $("#specList ul li img").livequery("mouseout",function(){ 
+        $(this).css({"border":"1px solid #ddd","padding":"2px"});
+    });
+    
+    //使用jqzoom
+    //$(".jqzoom").jqueryzoom({
+        //xzoom: 300, //放大图的宽度(默认是 200)
+        //yzoom: 300, //放大图的高度(默认是 200)
+        //offset: 10, //离原图的距离(默认是 10)
+        //position: "right", //放大图的定位(默认是 "right")
+        //preload:1   
+    //});
+    
+    /*如果小图过多，则出现滚动条在一行展示*/
+    var btnNext = $('#specRight');
+    var btnPrev = $('#specLeft')
+    var ul = btnPrev.next().find('ul');
+
+    var len = ul.find('li').length;
+    var i = 0 ;
+    if (len > 4) {
+        $("#specRight").addClass("specRightF").removeClass("specRightT");
+        ul.css("width", 92 * len)
+        btnNext.click(function(e) {
+            if(i>=len-4){
+                
+                return;
+            }
+            i++;
+            if(i == len-5){
+                $("#specRight").addClass("specRightT").removeClass("specRightF");
+            }
+            $("#specLeft").addClass("specLeftF").removeClass("specLeftT");
+            moveS(i);
+        })
+        btnPrev.click(function(e) {
+            if(i<=0){
+                return;
+            }
+            i--;
+            if(i==0){
+                $("#specLeft").addClass("specLeftT").removeClass("specLeftF");
+            }
+            $("#specRight").addClass("specRightF").removeClass("specRightT");
+            moveS(i);
+        })
+    }
+    function moveS(i) {
+        ul.animate({left:-92 * i}, 500)
+    }
+    function picAuto(){
+      if ($(".listImg li").size()<=4) {
+        $("#specLeft,#specRight").hide();
+      }
+    }
+    picAuto();
+});
+</script>
+</head>
+<body>
+<div class="l_bg"></div>
+<!--注册弹出层-->
+<div class="l_bg_txt">
+    <a id="close" href="javascript:;"></a>
+    <div class="txt_left">
+        <div class="txt_lt">
+            <div class="txt_ltl">
+                <p>用户注册</p>
+            </div>
+            <div class="txt_ltr"></div>
+        </div>
+        <div class="txt_rb">
+            <dl class="dl1">
+                <dt>电子邮箱</dt>
+                <dd><input type="text"/><span>该邮箱地址无效，请重新输入</span></dd>
+            </dl>
+            <dl class="dl1">
+                <dt>用户名</dt>
+                <dd><input type="text"/><span>此用户名已被别人占用</span></dd>
+            </dl>
+            <dl class="dl1">
+                <dt>密码</dt>
+                <dd><input type="text"/><span>密码太短，至少6位</span></dd>
+            </dl>
+            <dl class="dl1">
+                <dt>确认密码</dt>
+                <dd><input type="text"/><span>两次输入的密码不一致，请检查</span></dd>
+            </dl>
+            <dl class="dl2">
+                <dt>验证码</dt>
+                <dd><input type="text"/><a class="a1" href=""><img src="images/yz.png"/></a><a style="margin-left:5px;" href="">看不清？换一个</a><span class="sp1">请输入验证码</span></dd>
+            </dl>
+            <dl>
+                <dt>&nbsp;</dt>
+                <dd><input type="checkbox"/><span class="sp2">我已阅读并同意<a href="">《中仓网使用协议》</a></span></dd>
+            </dl>
+            <dl class="dl3">
+                <dt>&nbsp;</dt>
+                <dd><a href="">立即注册</a></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="l_oop"></div>
+    <div class="txt_right">
+        <div class="txt_ltx">
+            <div class="txt_ltl">
+                <p>登录</p>
+            </div>
+            <div class="txt_ltr" style="width:210px;"></div>
+        </div>
+        <div class="txt_lbx">
+            <p>已有中仓网账号，可直接登录</p>
+            <dl>
+                <dt>账号</dt>
+                <dd><input type="text"/></dd>
+            </dl>
+            <dl>
+                <dt>密码</dt>
+                <dd><input type="password"/></dd>
+            </dl>
+            <dl>
+                <dt>&nbsp;</dt>
+                <dd><a class="a1" href="">登录</a><a class="a2" href="">找回密码</a></dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<!--找仓库弹出层-->
+<div class="l_bg_txt2">
+    <a id="close2" href="javascript:;"></a>
+        <div class="txt_lt2">
+            <div class="txt_ltl2">
+                <p>填写预订信息</p>
+            </div>
+            <div class="txt_ltr2"></div>
+        </div>
+        <div class="txt_rb2">
+            <dl class="dl1">
+                <dt>联 系 人</dt>
+                <dd><input type="text"/></dd>
+            </dl>
+            <dl class="dl1">
+                <dt>电    话</dt>
+                <dd><input type="text"/></dd>
+            </dl>
+            <dl class="dl1">
+                <dt>预订时间</dt>
+                <dd><input type="text"/></dd>
+            </dl>
+            <dl class="dl1">
+                <dt>电子邮件</dt>
+                <dd><input type="text"/></dd>
+            </dl>
+            <dl class="dl1">
+                <dt>需求描述</dt>
+                <dd>
+                	<textarea name="" cols="" rows=""></textarea>
+                </dd>
+            </dl>
+            <dl class="dl3">
+                <dt>&nbsp;</dt>
+                <dd><a href="">预订</a></dd>
+            </dl>
+        </div>
+</div>
+<div class="l_bg_txt3">
+    <a id="close3" href="javascript:;"></a>
+        <div class="txt_lt2">
+            <div class="txt_ltl2">
+                <p>查看地图</p>
+            </div>
+            <div class="txt_ltr2"></div>
+        </div>
+        <div class="txt_rb2">
+            <img src="images/map.jpg" />
+        </div>
+</div>
+<!--头部-->
+<div class="header_cn">
+    <div class="header_cn_t">
+        <div class="header_cn_tm">
+            <div class="header_cn_left">
+                <dl>
+                    <dt><em class="em1">您好,欢迎来到中仓网。</em></dt>
+                    <dd><a class="a1 btn" href="javascript:;">请登录</a><a class="btn" href="javascript:;">免费注册</a></dd>
+                </dl>
+            </div>
+            <div class="header_cn_right">
+                <a class="a1" href="">个人中心</a>
+                <a class="a2">服务热线：<span>400-88888886</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="header_cn_list">
+        <div class="header_cn_mm">
+            <div class="header_cn_mmt">
+                <div class="header_cn_logo">
+                    <a href=""><img src="images/logo.png"/></a> ｜ 找仓库
+                </div>
+                    
+                <div class="header_cn_ss">
+                    <div class="cn_left">
+                        <div class="header_search mt12">
+                            <div class="search_t">
+                                <input class="inp1" type="text" value="1"/>
+                                <a href=""></a>
+                            </div>
+                            <p class="p_p">热搜：<a href="">仓储</a><em>|</em><a href="">中铁物流</a><em>|</em><a href="">码头</a></p>
+                        </div>
+                    </div>
+                    <div class="cn_right">
+                        <div class="cn_a">
+                            <a href="">发布出租仓库信息</a>
+                            <p>共有出租信息<span>112001</span>条</p>
+                        </div>
+                        <div class="cn_a">
+                            <a class="a1" href="">发布求租仓库信息</a>
+                            <p>共有出租信息<span>3121</span>条</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="header_guide">
+            <div class="guide_box">
+            <a href="">首 页</a><a href="">中仓视角</a><a href="">行业聚焦</a><a href="" class="choose">每日资讯</a><a href="">行业专题</a><a href="">政策法规</a><a href="">会议报道</a><a href="">产业建设</a><a href="">行业点睛</a><a href="">行业报告</a><a href="">行业百科</a><a href="" style="background:none">客户留言</a>	
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+<div class="body_cnm">
+    <div class="g_guide"><a href="">首页</a> > <a href="">找仓库</a></div>
+    <div class="box_l">
+        <div class="l_z_top">
+        	<h1>出租仓库标题出租仓库标题出租仓库标题出</h1>
+        	<div id="preview" class="fl">
+            <div class=jqzoom>
+                <img id=bigImg src="images/big_pic.jpg" width=410 height=285 jqimg="images/big_pic.jpg">
+            </div>
+            <div id=spec>
+                <div id=specLeft class="control specLeftT"><img src="images/ico_zr.jpg" /></div>
+                <div id=specList>
+                    <ul class=listImg>
+                      <li><img id=smallPicOne src="images/cn_img1.jpg" src_H="images/big_pic.jpg" src_D="images/cn_img1.jpg">  </li>
+                      <li><img id=smallPicOne src="images/cn_img2.jpg" src_H="images/big_pic.jpg" src_D="images/cn_img2.jpg">  </li>
+                      <li><img id=smallPicOne src="images/cn_img3.jpg" src_H="images/big_pic.jpg" src_D="images/cn_img3.jpg">  </li>
+                      <li><img id=smallPicOne src="images/cn_img4.jpg" src_H="images/big_pic.jpg" src_D="images/cn_img4.jpg">  </li>
+                      <li><img id=smallPicOne src="images/cn_img1.jpg" src_H="images/big_pic.jpg" src_D="images/cn_img1.jpg">  </li>
+                      <li><img id=smallPicOne src="images/cn_img2.jpg" src_H="images/big_pic.jpg" src_D="images/cn_img2.jpg">  </li>
+                      <li><img id=smallPicOne src="images/cn_img3.jpg" src_H="images/big_pic.jpg" src_D="images/cn_img3.jpg">  </li>
+                    </ul>
+                </div>
+                <div id=specRight class="control specRightT"><img src="images/ico_zr.jpg" /></div>
+            </div>
+        </div>
+        <div class="l_z_tr">
+        	<p>仓库面积：1000㎡ <i>（目前可租：1000㎡）</i></p>
+            <em>日 租 金：<b>12</b>元/㎡/天 （月租金：28000元）</em>
+            <p>地理位置：北京-亦庄:<br/>仓库类型：恒温库<br/>建筑标准：高台</p>
+            <p class="ico"><img src="images/bz_img2.png"/> <img src="images/bz_img3.png"/></p>
+        </div>
+        <input name="" type="button" class="buy" value="立即购买" />
+        </div>
+        <div class="con_box mt18">
+        	<h2>仓库详情</h2>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mt12 ml18">
+  <tr>
+  	<th>详细地址：</th>
+    <td colspan="3">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <a href="javascript:;" class="dt_btn">查看地图</a></td>
+    </tr>
+  <tr>
+  	<th>仓内代运营：</th>
+    <td colspan="3">收货管理、存货管理、订单管理、拣货管理、质检管理、包装管理、发运管理、结算管理、供应商管理</td>
+    </tr>
+  <tr>
+    <th width="13%">库内高度：</th>
+    <td width="35%">不低于6米</td>
+    <th width="12%">库内地面：</th>
+    <td width="40%">防尘地面</td>
+  </tr>
+  <tr>
+    <th>星级认证：</th>
+    <td><span class="xx1"></span></td>
+    <th>质量认证：</th>
+    <td>服务质量金牌认证</td>
+  </tr>
+  <tr>
+    <th>主体结构：</th>
+    <td>钢混结构</td>
+    <th>层高：</th>
+    <td>2层</td>
+  </tr>
+  <tr>
+    <th>配电容量：</th>
+    <td>xxx千伏安</td>
+    <th>安防措施：</th>
+    <td>灭火器、园区内保</td>
+  </tr>
+  <tr>
+    <th>地面承重：</th>
+    <td>xxxx吨</td>
+    <th>配套设施：</th>
+    <td>办公、食堂、住宿</td>
+  </tr>
+</table>
+			<p>
+            		业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，主写的文字描述，业主写的文字描述，业主写的文字描述。
+	业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述，业主写的文字描述。
+            </p>
+            <h2 style="border-top:1px solid #ddd;">仓库实景照片</h2>
+            <p class="last_img">
+            	<img src="images/big_pic.jpg"><br/>
+                <img src="images/big_pic.jpg"><br/>
+            </p>
+            <div class="lxbox">
+            	<em>联系人：xxxxxxx</em>
+                <em>电话：123445567788</em>
+            </div>
+            <p>注：此信息为中仓网在会员发布的信息，如果该信息不能满足您的需求，请直接拨打我们的客服电话：400-88888888，010-88888888，我们将免费为您提供更多的仓储信息服务。
+</p>
+        </div>
+        <div class="con_box mt18">
+        	<h2>您最近还看过这些</h2>
+            <dl class="tjck mb12 mt12 ml8">
+                	<dt><a href=""><img src="images/pic_zck.jpg"></a><br/><a href="">出租仓库标题出租仓库标题出租仓</a></dt>
+                    <dd class="dz">北京-亦庄</dd><dd class="mj">面积：1000㎡</dd><dd class="jg">1.2 元/㎡/天</dd>
+                </dl>
+                <dl class="tjck mb12 mt12 ml8">
+                	<dt><a href=""><img src="images/pic_zck.jpg"></a><br/><a href="">出租仓库标题出租仓库标题出租仓</a></dt>
+                    <dd class="dz">北京-亦庄</dd><dd class="mj">面积：1000㎡</dd><dd class="jg">1.2 元/㎡/天</dd>
+                </dl>
+                <dl class="tjck mb12 mt12 ml8">
+                	<dt><a href=""><img src="images/pic_zck.jpg"></a><br/><a href="">出租仓库标题出租仓库标题出租仓</a></dt>
+                    <dd class="dz">北京-亦庄</dd><dd class="mj">面积：1000㎡</dd><dd class="jg">1.2 元/㎡/天</dd>
+                </dl>
+        </div>
+    </div>
+    	<div class="box_r">
+            <div class="r_gg"><a href=""><img src="images/img2.jpg"></a></div>
+            <div class="r_z_box">
+                <h1>强力推荐</h1>
+                <dl class="tjck mb12">
+                	<dt><a href=""><img src="images/pic_zck.jpg"></a><br/><a href="">出租仓库标题出租仓库标题出租仓</a></dt>
+                    <dd class="dz">北京-亦庄</dd><dd class="mj">面积：1000㎡</dd><dd class="jg">1.2 元/㎡/天</dd>
+                </dl>
+                <dl class="tjck mb12">
+                	<dt><a href=""><img src="images/pic_zck.jpg"></a><br/><a href="">出租仓库标题出租仓库标题出租仓</a></dt>
+                    <dd class="dz">北京-亦庄</dd><dd class="mj">面积：1000㎡</dd><dd class="jg">1.2 元/㎡/天</dd>
+                </dl>
+                <dl class="tjck mb12">
+                	<dt><a href=""><img src="images/pic_zck.jpg"></a><br/><a href="">出租仓库标题出租仓库标题出租仓</a></dt>
+                    <dd class="dz">北京-亦庄</dd><dd class="mj">面积：1000㎡</dd><dd class="jg">1.2 元/㎡/天</dd>
+                </dl>
+            </div>
+            <div class="r_gg mt12"><a href=""><img src="images/img2.jpg"></a></div>
+            <div class="r_gg"><a href=""><img src="images/img2.jpg"></a></div>
+            <div class="r_gg"><a href=""><img src="images/img2.jpg"></a></div>
+        </div>
+        <div class="clear"></div>
+</div>
+    <div class="clear"></div>
+	<div class="footer">
+		<div class="footer_c pt30">
+            <p>费咨询热线：400-000-0000 传真：010-00000000</p>
+            <p><a href="">关于我们</a> | <a href="">联系方式</a> | <a href="">帮助中心</a> | <a href="">加盟中心</a> | <a href="">友情链接</a> | <a href="">法律声明</a> | <a href="">广告服务</a> | <a href="">诚聘英才</a></p>
+            <p>版权所有：中铁物流集团， [经营许可证号 00000000000000] [京ICP备000000号-0] [京公网安备00000000000000号]</p>
+            <p>Copyright © 2014 - 2016 www.crlg.com All Rights Reserved </p>
+            <div class="footer_box4">
+                <a><img src="images/cc1.jpg"/></a>
+                <a><img src="images/cc2.jpg"/></a>
+                <a><img src="images/cc3.jpg"/></a>
+            </div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			$('.btn').click(function(){
+				$('.l_bg').show();
+				$('.l_bg_txt').show();
+			});
+			$('#close').click(function(){
+				$('.l_bg').hide();
+				$('.l_bg_txt').hide();
+			});
+		});
+		$(function(){
+			$('.buy').click(function(){
+				$('.l_bg').show();
+				$('.l_bg_txt2').show();
+			});
+			$('#close2').click(function(){
+				$('.l_bg').hide();
+				$('.l_bg_txt2').hide();
+			});
+		});
+		$(function(){
+			$('.dt_btn').click(function(){
+				$('.l_bg').show();
+				$('.l_bg_txt3').show();
+			});
+			$('#close3').click(function(){
+				$('.l_bg').hide();
+				$('.l_bg_txt3').hide();
+			});
+		});
+	</script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

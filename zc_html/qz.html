@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>中仓网</title>
+	<link rel="stylesheet" href="css/dh.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="css/index.css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/dh.js"></script>
+    <script type="text/javascript" src="js/saixuan.js"></script>
+</head>
+<body>
+<div class="l_bg"></div>
+<!--注册弹出层-->
+<div class="l_bg_txt">
+    <a id="close" href="javascript:;"></a>
+    <div class="txt_left">
+        <div class="txt_lt">
+            <div class="txt_ltl">
+                <p>用户注册</p>
+            </div>
+            <div class="txt_ltr"></div>
+        </div>
+        <div class="txt_rb">
+            <dl class="dl1">
+                <dt>电子邮箱</dt>
+                <dd><input type="text"/><span>该邮箱地址无效，请重新输入</span></dd>
+            </dl>
+            <dl class="dl1">
+                <dt>用户名</dt>
+                <dd><input type="text"/><span>此用户名已被别人占用</span></dd>
+            </dl>
+            <dl class="dl1">
+                <dt>密码</dt>
+                <dd><input type="text"/><span>密码太短，至少6位</span></dd>
+            </dl>
+            <dl class="dl1">
+                <dt>确认密码</dt>
+                <dd><input type="text"/><span>两次输入的密码不一致，请检查</span></dd>
+            </dl>
+            <dl class="dl2">
+                <dt>验证码</dt>
+                <dd><input type="text"/><a class="a1" href=""><img src="images/yz.png"/></a><a style="margin-left:5px;" href="">看不清？换一个</a><span class="sp1">请输入验证码</span></dd>
+            </dl>
+            <dl>
+                <dt>&nbsp;</dt>
+                <dd><input type="checkbox"/><span class="sp2">我已阅读并同意<a href="">《中仓网使用协议》</a></span></dd>
+            </dl>
+            <dl class="dl3">
+                <dt>&nbsp;</dt>
+                <dd><a href="">立即注册</a></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="l_oop"></div>
+    <div class="txt_right">
+        <div class="txt_ltx">
+            <div class="txt_ltl">
+                <p>登录</p>
+            </div>
+            <div class="txt_ltr" style="width:210px;"></div>
+        </div>
+        <div class="txt_lbx">
+            <p>已有中仓网账号，可直接登录</p>
+            <dl>
+                <dt>账号</dt>
+                <dd><input type="text"/></dd>
+            </dl>
+            <dl>
+                <dt>密码</dt>
+                <dd><input type="password"/></dd>
+            </dl>
+            <dl>
+                <dt>&nbsp;</dt>
+                <dd><a class="a1" href="">登录</a><a class="a2" href="">找回密码</a></dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<!--可提供的仓弹出层-->
+<!--<div class="l_bg_txt2">
+    <a id="close2" href="javascript:;"></a>
+    <div class="tgc_tc">我可提供的仓源 <select name="">
+          <option>北京</option>
+          <option>深圳</option>
+  </select></div>
+    <ul class="tgc_tc_con">
+    	<li><a href="#" class="tit">出租仓库标题出租仓库标题出租仓库标题</a>	<span class="ml25">位置:北京-亦庄</span><span class="ml25">面积:1000㎡</span><span class="ml25 mr25">1.2 元/㎡/天</span><a href="#" class="tgc_btn mt5">提供</a></li>
+        <li><a href="#" class="tit">出租仓库标题出租仓库标题出租仓库标题</a>	<span class="ml25">位置:北京-亦庄</span><span class="ml25">面积:1000㎡</span><span class="ml25 mr25">1.2 元/㎡/天</span><a href="#" class="tgc_btn mt5">提供</a></li>
+        <li><a href="#" class="tit">出租仓库标题出租仓库标题出租仓库标题</a>	<span class="ml25">位置:北京-亦庄</span><span class="ml25">面积:1000㎡</span><span class="ml25 mr25">1.2 元/㎡/天</span><a href="#" class="tgc_btn mt5">提供</a></li>
+        <li><a href="#" class="tit">出租仓库标题出租仓库标题出租仓库标题</a>	<span class="ml25">位置:北京-亦庄</span><span class="ml25">面积:1000㎡</span><span class="ml25 mr25">1.2 元/㎡/天</span><a href="#" class="tgc_btn mt5">提供</a></li>
+        <li><a href="#" class="tit">出租仓库标题出租仓库标题出租仓库标题</a>	<span class="ml25">位置:北京-亦庄</span><span class="ml25">面积:1000㎡</span><span class="ml25 mr25">1.2 元/㎡/天</span><a href="#" class="tgc_btn mt5">提供</a></li>
+        <li><a href="#" class="tit">出租仓库标题出租仓库标题出租仓库标题</a>	<span class="ml25">位置:北京-亦庄</span><span class="ml25">面积:1000㎡</span><span class="ml25 mr25">1.2 元/㎡/天</span><a href="#" class="tgc_btn mt5">提供</a></li>
+        <li><a href="#" class="tit">出租仓库标题出租仓库标题出租仓库标题</a>	<span class="ml25">位置:北京-亦庄</span><span class="ml25">面积:1000㎡</span><span class="ml25 mr25">1.2 元/㎡/天</span><a href="#" class="tgc_btn mt5">提供</a></li>
+       
+        <div class="clear"></div>
+        <div class="page"><a href="">上一页</a><a href="" class="choose">1</a><a href="">2</a><a href="">3</a><a href="">下一页</a></div>
+    </ul>
+</div>-->
+<!--无信息弹窗-->
+<div class="l_bg_txt2">
+	<a id="close2" href="javascript:;"></a>
+    <div class="tgc_tc">我可提供的仓源 <select name="">
+          <option>北京</option>
+          <option>深圳</option>
+  </select></div>
+  <ul class="tgc_tc_con2">
+  		<li class="noxx">您还没发布过仓源信息</li>
+        <a href="#" class="ljfb_btn">立即发布仓源</a>
+        <div class="clear"></div>
+  </ul>
+</div>
+<!--头部-->
+<div class="header_cn">
+    <div class="header_cn_t">
+        <div class="header_cn_tm">
+            <div class="header_cn_left">
+                <dl>
+                    <dt><em class="em1">您好,欢迎来到中仓网。</em></dt>
+                    <dd><a class="a1 btn" href="javascript:;">请登录</a><a class="btn" href="javascript:;">免费注册</a></dd>
+                </dl>
+            </div>
+            <div class="header_cn_right">
+                <a class="a1" href="">个人中心</a>
+                <a class="a2">服务热线：<span>400-88888886</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="header_cn_list">
+        <div class="header_cn_mm">
+            <div class="header_cn_mmt">
+                <div class="header_cn_logo">
+                    <a href=""><img src="images/logo.png"/></a> ｜ 求租
+                </div>
+                    
+                <div class="header_cn_ss">
+                    <div class="cn_left">
+                        <div class="header_search mt12">
+                            <div class="search_t">
+                                <input class="inp1" type="text" value="1"/>
+                                <a href=""></a>
+                            </div>
+                            <p class="p_p">热搜：<a href="">仓储</a><em>|</em><a href="">中铁物流</a><em>|</em><a href="">码头</a></p>
+                        </div>
+                    </div>
+                    <div class="cn_right">
+                        <div class="cn_a">
+                            <a href="">发布出租仓库信息</a>
+                            <p>共有出租信息<span>112001</span>条</p>
+                        </div>
+                        <div class="cn_a">
+                            <a class="a1" href="">发布求租仓库信息</a>
+                            <p>共有出租信息<span>3121</span>条</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="header_guide">
+            <div class="guide_box">
+            <a href="">首 页</a><a href="">中仓视角</a><a href="">行业聚焦</a><a href="" class="choose">每日资讯</a><a href="">行业专题</a><a href="">政策法规</a><a href="">会议报道</a><a href="">产业建设</a><a href="">行业点睛</a><a href="">行业报告</a><a href="">行业百科</a><a href="" style="background:none">客户留言</a>	
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="body_cnm">
+    <div class="g_guide"><a href="">首页</a> > <a href="">找仓库</a></div>
+    <div class="box_l">
+        <div style="height: 266px;" class="gc_lb_list" id="gc_lb_list">
+        	<ul class="select clear" id="lb_list_box">
+            <li class="select-result">
+			<dl>
+				<dt>已选条件：</dt>
+				<dd class="select-no">暂时没有选择过滤条件</dd>
+			</dl>
+		</li>
+        <li class="select-list">
+			<dl id="select0">
+				<dt>区域：</dt>
+			  <dd><select name="">
+				  <option>北京</option>
+				  <option>上海</option>
+				  <option>广州</option>
+				  <option>深圳</option>
+			  </select> 
+              <select name="">
+				  <option>北京</option>
+				  <option>上海</option>
+				  <option>广州</option>
+				  <option>深圳</option>
+			  </select></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select1">
+				<dt>面积（㎡）：</dt>
+				<dd class="select-all selected"><a href="javascript:void(0)">全部</a></dd>
+				<dd><a href="javascript:void(0)">0-5000</a></dd>
+				<dd><a href="javascript:void(0)">5000-10000</a></dd>
+				<dd><a href="javascript:void(0)">1万-5万</a></dd>
+				<dd><a href="javascript:void(0)">5万以上</a></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select2">
+				<dt>日 租 金：</dt>
+				<dd class="select-all selected"><a href="javascript:void(0)">全部</a></dd>
+				<dd><a href="javascript:void(0)">0-0.5</a></dd>
+				<dd><a href="javascript:void(0)">0.5-1</a></dd>
+				<dd><a href="javascript:void(0)">1-1.5</a></dd>
+				<dd><a href="javascript:void(0)">1.5以上</a></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select3">
+				<dt>仓库类型：</dt>
+				<dd class="select-all selected"><a href="javascript:void(0)">全部</a></dd>
+				<dd><a href="javascript:void(0)">普通库</a></dd>
+				<dd><a href="javascript:void(0)">恒温库</a></dd>
+				<dd><a href="javascript:void(0)">冷藏库</a></dd>
+				<dd><a href="javascript:void(0)">冷冻库</a></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select4">
+				<dt>仓内运营：</dt>
+				<dd class="select-all selected"><a href="javascript:void(0)">全部</a></dd>
+				<dd><a href="javascript:void(0)">有代运营</a></dd>
+				<dd><a href="javascript:void(0)">无代运营</a></dd>
+				<em><a href="#">什么是仓内运营?</a></em>
+			</dl>
+		</li>
+        <li class="select-list b_b_da pb10">
+			<dl id="select5">
+				<dt>建筑标准：</dt>
+				<dd class="select-all selected"><a href="javascript:void(0)">全部</a></dd>
+				<dd><a href="javascript:void(0)">平台</a></dd>
+				<dd><a href="javascript:void(0)">高台</a></dd>
+			</dl>
+		</li>
+	</ul>
+        </div>
+        <div class="z_seaceh">
+        	在筛选结果里找 <input name="" type="text" class="text" /><input name="" type="button" class="btn" value="搜索" />
+        
+        </div>
+        <ul>
+            <li class="qz">
+            	<h1>求租仓库的标题求租仓库的标题求租仓库的标题求租仓库的标题</h1>
+                <div class="qz_con">
+                	<p>我的需求</p>
+                    <dl class="xq">
+                    	<dt>位置 <b>北京-亦庄</b></dt>
+                        <dt>面积 <b>1000㎡</b></dt>
+                        <dt>日租金 <b>1.0元/㎡以内</b></dt>
+                        <dt>类型 <b>常温库</b></dt>
+                        <dt>建筑标准 <b>高台</b></dt>
+                        <dt>层高 <b>不少于6米</b></dt>
+                        <dt>地面 <b>防尘</b></dt>
+                    </dl>
+                    <p>我要这样的仓内代运营：<a href="#">什么是仓内运营?</a></p>
+                	<p class="sm">
+                    	收货管理、存货管理、订单管理、拣货管理、质检管理、包装管理、发运管理、结算管理、供应商管理
+                    </p>
+                    <span class="lxfs mt12">联系人：<i>xxxxxxx </i> 电话：<i>123445567788</i></span>
+                    <span class="tgc_btn mt18">我要提供仓</span>
+                    <span class="time mt18">
+                    	被浏览xxx次<br/>60分钟前 发布
+                    </span>
+                </div>
+            </li>
+            <li class="qz">
+            	<h1>求租仓库的标题求租仓库的标题求租仓库的标题求租仓库的标题</h1>
+                <div class="qz_con">
+                	<p>我的需求</p>
+                    <dl class="xq">
+                    	<dt>位置 <b>北京-亦庄</b></dt>
+                        <dt>面积 <b>1000㎡</b></dt>
+                        <dt>日租金 <b>1.0元/㎡以内</b></dt>
+                        <dt>类型 <b>常温库</b></dt>
+                        <dt>建筑标准 <b>高台</b></dt>
+                        <dt>层高 <b>不少于6米</b></dt>
+                        <dt>地面 <b>防尘</b></dt>
+                    </dl>
+                    <p>我要这样的仓内代运营：<a href="#">什么是仓内运营?</a></p>
+                	<p class="sm">
+                    	收货管理、存货管理、订单管理、拣货管理、质检管理、包装管理、发运管理、结算管理、供应商管理
+                    </p>
+                    <span class="lxfs mt12">联系人：<i>xxxxxxx </i> 电话：<i>123445567788</i></span>
+                    <span class="tgc_btn mt18">我要提供仓</span>
+                    <span class="time mt18">
+                    	被浏览xxx次<br/>60分钟前 发布
+                    </span>
+                </div>
+            </li>
+            <li class="qz">
+            	<h1>求租仓库的标题求租仓库的标题求租仓库的标题求租仓库的标题</h1>
+                <div class="qz_con">
+                	<p>我的需求</p>
+                    <dl class="xq">
+                    	<dt>位置 <b>北京-亦庄</b></dt>
+                        <dt>面积 <b>1000㎡</b></dt>
+                        <dt>日租金 <b>1.0元/㎡以内</b></dt>
+                        <dt>类型 <b>常温库</b></dt>
+                        <dt>建筑标准 <b>高台</b></dt>
+                        <dt>层高 <b>不少于6米</b></dt>
+                        <dt>地面 <b>防尘</b></dt>
+                    </dl>
+                    <p>我要这样的仓内代运营：<a href="#">什么是仓内运营?</a></p>
+                	<p class="sm">
+                    	收货管理、存货管理、订单管理、拣货管理、质检管理、包装管理、发运管理、结算管理、供应商管理
+                    </p>
+                    <span class="lxfs mt12">联系人：<i>xxxxxxx </i> 电话：<i>123445567788</i></span>
+                    <span class="tgc_btn mt18">我要提供仓</span>
+                    <span class="time mt18">
+                    	被浏览xxx次<br/>60分钟前 发布
+                    </span>
+                </div>
+            </li>
+            <li class="qz">
+            	<h1>求租仓库的标题求租仓库的标题求租仓库的标题求租仓库的标题</h1>
+                <div class="qz_con">
+                	<p>我的需求</p>
+                    <dl class="xq">
+                    	<dt>位置 <b>北京-亦庄</b></dt>
+                        <dt>面积 <b>1000㎡</b></dt>
+                        <dt>日租金 <b>1.0元/㎡以内</b></dt>
+                        <dt>类型 <b>常温库</b></dt>
+                        <dt>建筑标准 <b>高台</b></dt>
+                        <dt>层高 <b>不少于6米</b></dt>
+                        <dt>地面 <b>防尘</b></dt>
+                    </dl>
+                    <p>我要这样的仓内代运营：<a href="#">什么是仓内运营?</a></p>
+                	<p class="sm">
+                    	收货管理、存货管理、订单管理、拣货管理、质检管理、包装管理、发运管理、结算管理、供应商管理
+                    </p>
+                    <span class="lxfs mt12">联系人：<i>xxxxxxx </i> 电话：<i>123445567788</i></span>
+                    <span class="tgc_btn mt18">我要提供仓</span>
+                    <span class="time mt18">
+                    	被浏览xxx次<br/>60分钟前 发布
+                    </span>
+                </div>
+            </li>
+            <li class="qz">
+            	<h1>求租仓库的标题求租仓库的标题求租仓库的标题求租仓库的标题</h1>
+                <div class="qz_con">
+                	<p>我的需求</p>
+                    <dl class="xq">
+                    	<dt>位置 <b>北京-亦庄</b></dt>
+                        <dt>面积 <b>1000㎡</b></dt>
+                        <dt>日租金 <b>1.0元/㎡以内</b></dt>
+                        <dt>类型 <b>常温库</b></dt>
+                        <dt>建筑标准 <b>高台</b></dt>
+                        <dt>层高 <b>不少于6米</b></dt>
+                        <dt>地面 <b>防尘</b></dt>
+                    </dl>
+                    <p>我要这样的仓内代运营：<a href="#">什么是仓内运营?</a></p>
+                	<p class="sm">
+                    	收货管理、存货管理、订单管理、拣货管理、质检管理、包装管理、发运管理、结算管理、供应商管理
+                    </p>
+                    <span class="lxfs mt12">联系人：<i>xxxxxxx </i> 电话：<i>123445567788</i></span>
+                    <span class="tgc_btn mt18">我要提供仓</span>
+                    <span class="time mt18">
+                    	被浏览xxx次<br/>60分钟前 发布
+                    </span>
+                </div>
+            </li>
+            <li class="qz">
+            	<h1>求租仓库的标题求租仓库的标题求租仓库的标题求租仓库的标题</h1>
+                <div class="qz_con">
+                	<p>我的需求</p>
+                    <dl class="xq">
+                    	<dt>位置 <b>北京-亦庄</b></dt>
+                        <dt>面积 <b>1000㎡</b></dt>
+                        <dt>日租金 <b>1.0元/㎡以内</b></dt>
+                        <dt>类型 <b>常温库</b></dt>
+                        <dt>建筑标准 <b>高台</b></dt>
+                        <dt>层高 <b>不少于6米</b></dt>
+                        <dt>地面 <b>防尘</b></dt>
+                    </dl>
+                    <p>我要这样的仓内代运营：<a href="#">什么是仓内运营?</a></p>
+                	<p class="sm">
+                    	收货管理、存货管理、订单管理、拣货管理、质检管理、包装管理、发运管理、结算管理、供应商管理
+                    </p>
+                    <span class="lxfs mt12">联系人：<i>xxxxxxx </i> 电话：<i>123445567788</i></span>
+                    <span class="tgc_btn mt18">我要提供仓</span>
+                    <span class="time mt18">
+                    	被浏览xxx次<br/>60分钟前 发布
+                    </span>
+                </div>
+            </li>
+            <div class="clear"></div>
+        </ul>
+        <div class="page"><a href="">上一页</a><a href="" class="choose">1</a><a href="">2</a><a href="">3</a><a href="">下一页</a>
+        </div>
+    </div>
+    	<div class="box_r">
+            <div class="r_gg"><a href=""><img src="images/img2.jpg"></a></div>
+            <div class="r_z_box">
+                <h1>强力推荐</h1>
+                <dl class="tjck mb12">
+                	<dt><a href=""><img src="images/pic_zck.jpg"></a><br/><a href="">出租仓库标题出租仓库标题出租仓</a></dt>
+                    <dd class="dz">北京-亦庄</dd><dd class="mj">面积：1000㎡</dd><dd class="jg">1.2 元/㎡/天</dd>
+                </dl>
+                <dl class="tjck mb12">
+                	<dt><a href=""><img src="images/pic_zck.jpg"></a><br/><a href="">出租仓库标题出租仓库标题出租仓</a></dt>
+                    <dd class="dz">北京-亦庄</dd><dd class="mj">面积：1000㎡</dd><dd class="jg">1.2 元/㎡/天</dd>
+                </dl>
+                <dl class="tjck mb12">
+                	<dt><a href=""><img src="images/pic_zck.jpg"></a><br/><a href="">出租仓库标题出租仓库标题出租仓</a></dt>
+                    <dd class="dz">北京-亦庄</dd><dd class="mj">面积：1000㎡</dd><dd class="jg">1.2 元/㎡/天</dd>
+                </dl>
+            </div>
+            <div class="r_gg mt12"><a href=""><img src="images/img2.jpg"></a></div>
+            <div class="r_gg"><a href=""><img src="images/img2.jpg"></a></div>
+            <div class="r_gg"><a href=""><img src="images/img2.jpg"></a></div>
+        </div>
+        <div class="clear"></div>
+</div>
+    <div class="clear"></div>
+	<div class="footer">
+		<div class="footer_c pt30">
+            <p>费咨询热线：400-000-0000 传真：010-00000000</p>
+            <p><a href="">关于我们</a> | <a href="">联系方式</a> | <a href="">帮助中心</a> | <a href="">加盟中心</a> | <a href="">友情链接</a> | <a href="">法律声明</a> | <a href="">广告服务</a> | <a href="">诚聘英才</a></p>
+            <p>版权所有：中铁物流集团， [经营许可证号 00000000000000] [京ICP备000000号-0] [京公网安备00000000000000号]</p>
+            <p>Copyright © 2014 - 2016 www.crlg.com All Rights Reserved </p>
+            <div class="footer_box4">
+                <a><img src="images/cc1.jpg"/></a>
+                <a><img src="images/cc2.jpg"/></a>
+                <a><img src="images/cc3.jpg"/></a>
+            </div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			$('.btn').click(function(){
+				$('.l_bg').show();
+				$('.l_bg_txt').show();
+			});
+			$('#close').click(function(){
+				$('.l_bg').hide();
+				$('.l_bg_txt').hide();
+			});
+		});
+		$(function(){
+			$('.tgc_btn').click(function(){
+				$('.l_bg').show();
+				$('.l_bg_txt2').show();
+			});
+			$('#close2').click(function(){
+				$('.l_bg').hide();
+				$('.l_bg_txt2').hide();
+			});
+		});
+	</script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
